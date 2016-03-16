@@ -1,17 +1,17 @@
 public class Rectangle {
-    private final Number length;
-    private final Number breadth;
+    private final double length;
+    private final double breadth;
 
-    public Rectangle(Number length, Number breadth) {
+    public Rectangle(double length, double breadth) {
         this.length = length;
         this.breadth = breadth;
     }
 
-    public Number area() {
-        return length.multiply(breadth);
+    public double area() {
+        return length * breadth;
     }
 
-    public Number perimeter() {
-        return length.add(breadth).multiply(new Number(2));
+    public double perimeter() {
+        return 2 * (length + breadth);
     }
 }
