@@ -5,7 +5,16 @@ public class Number {
         this.number = number;
     }
 
-    public int value() {
-        return number;
+    public Number multiply(Number breadth) {
+        return new Number(number * breadth.number);
+    }
+
+    public Number add(Number breadth) {
+        return new Number(number + breadth.number);
+    }
+
+
+    public boolean equals(Number other) {
+        return number == other.number;
     }
 }

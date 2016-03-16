@@ -8,7 +8,10 @@ public class Rectangle {
     }
 
     public Number area() {
-        int area = length.value() * breadth.value();
-        return new Number(area);
+        return length.multiply(breadth);
+    }
+
+    public Number perimeter() {
+        return length.add(breadth).multiply(new Number(2));
     }
 }
