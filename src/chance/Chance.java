@@ -9,4 +9,8 @@ public class Chance {
     public double getChanceToGetTail() {
         return 0.5;
     }
+
+    public double getChanceToNotGetTail() {
+        return (1-getChanceToGetTail());
+    }
 }
