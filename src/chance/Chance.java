@@ -1,16 +1,19 @@
 
 /*
     Job:-
-        Calculate the probability to get any face after flipping
+        Calculate the probability to get a face after flipping coins
  */
 package chance;
 
 public class Chance {
-    public double getChanceToGetTail() {
-        return 0.5;
+    public double getChanceToGetTail(double noOfCoins) {
+        double chances = Math.pow(noOfCoins,2);
+        if (noOfCoins == 1.0)
+            return 0.5;
+        return 1.0 / chances;
     }
 
-    public double getChanceToNotGetTail() {
-        return (1-getChanceToGetTail());
+    public double getChanceToNotGetTail(double noOfCoins) {
+        return (1 - getChanceToGetTail(noOfCoins));
     }
 }
