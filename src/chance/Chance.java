@@ -27,6 +27,7 @@ public class Chance {
         if (otherChance == null || getClass() != otherChance.getClass()) return false;
 
         Chance chance = (Chance) otherChance;
+        System.out.println("chance = " + chance.value + "-----" + value);
         return Double.compare(chance.value, value) == 0;
 
     }
@@ -35,8 +36,9 @@ public class Chance {
         return new Chance(1 - value);
     }
 
-    private Chance multiply(Chance otherChance) {
+    private Chance and(Chance otherChance) {
         double product = otherChance.value * value;
+        System.out.println("product = " + product);
         return Chance.create(product);
     }
 
@@ -47,22 +49,23 @@ public class Chance {
     }
 
     public Chance getChanceToNotOccurForSingleEvent() {
+
         return getChanceToOccurOnceForSingleEvent().not();
     }
 
     public Chance getChanceToNotOccurForMultipleEvent(int noOfEvents) {
         Chance chance = null;
         for (int i = 0; i < noOfEvents - 1; i++) {
-            chance = getChanceToOccurOnceForSingleEvent().multiply(getChanceToOccurOnceForSingleEvent());
+            chance = getChanceToOccurOnceForSingleEvent().and(getChanceToOccurOnceForSingleEvent());
         }
         return chance;
     }
 
 
     public Chance getChanceToOccurAtLeastOnceForMultipleEvents(int noOfEvents) {
-        Chance chance = null;
+        Chance chance = Chance.create(1);
         for (int i = 0; i < noOfEvents - 1; i++) {
-            chance = getChanceToNotOccurForSingleEvent().multiply(getChanceToNotOccurForSingleEvent()).not();
+            chance = getChanceToNotOccurForSingleEvent().not();
         }
         return chance;
     }

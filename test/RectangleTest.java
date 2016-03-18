@@ -36,18 +36,21 @@ public class RectangleTest {
         Rectangle rectangle = Rectangle.createRectangle(0, 5);
 
     }
+
     @Test
     public void createRectangleThrowsExceptionIfBreadthIsZero() throws Exception {
         thrown.expect(NonPositiveArgumentException.class);
         thrown.expectMessage("Expected positive number, but actual is 0.0");
         Rectangle rectangle = Rectangle.createRectangle(1, 0);
     }
+
     @Test
     public void createRectangleThrowsExceptionIfBreadthIsNegative() throws Exception {
         thrown.expect(NonPositiveArgumentException.class);
         thrown.expectMessage(CoreMatchers.is("Expected positive number, but actual is -4.0"));
         Rectangle rectangle = Rectangle.createRectangle(4, -4);
     }
+
     @Test
     public void createRectangleThrowsExceptionIfLengthIsNegative() throws Exception {
         thrown.expect(NonPositiveArgumentException.class);

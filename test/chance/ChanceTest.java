@@ -53,4 +53,10 @@ public class ChanceTest {
         Chance forMultipleEvents = chance.getChanceToOccurAtLeastOnceForMultipleEvents(2);
         Assert.assertEquals(Chance.create(3d/4),forMultipleEvents);
     }
+    @Test
+    public void getChanceToOccurAtleastOnceFor3EventsShouldGiveTheProbabilityToGetChanceToOccurAtleastOnce() {
+        Chance chance = Chance.create(0.5);
+        Chance forMultipleEvents = chance.getChanceToOccurAtLeastOnceForMultipleEvents(3);
+        Assert.assertEquals(Chance.create(8d/9),forMultipleEvents);
+    }
 }
