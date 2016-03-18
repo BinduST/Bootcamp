@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcad61fe-678f-4247-bb08-a5eda0be73a9" name="Default" comment="">
+    <list default="true" id="dcad61fe-678f-4247-bb08-a5eda0be73a9" name="Default" comment="implemented methods to get the chances for 2 coins&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chance/ProbabilityGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/chance/ProbabilityGeneratorTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chance/Chance.java" afterPath="$PROJECT_DIR$/src/chance/Chance.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/chance/ChanceTest.java" afterPath="$PROJECT_DIR$/test/chance/ChanceTest.java" />
@@ -20,6 +22,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Rectangle$RectangleTest.coverage" NAME="RectangleTest Coverage Results" MODIFIED="1458128145449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Rectangle$All_in_Rectangle__1_.coverage" NAME="All in Rectangle (1) Coverage Results" MODIFIED="1458212246273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Rectangle$chance_in_Rectangle.coverage" NAME="chance in Rectangle Coverage Results" MODIFIED="1458278311803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>chance.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Rectangle$All_in_Rectangle.coverage" NAME="All in Rectangle Coverage Results" MODIFIED="1458128472112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -31,14 +36,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Chance.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProbabilityGenerator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chance/ProbabilityGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5605727">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#598#599#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Chance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chance/Chance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06277533">
-              <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#0#1013#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#862#863#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProbabilityGeneratorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/chance/ProbabilityGeneratorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,9 +79,9 @@
         <entry file="file://$PROJECT_DIR$/test/chance/ChanceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1458277991000" expanded="true" signature="281:503" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -87,6 +118,9 @@
         <option value="$PROJECT_DIR$/test/Coin/CoinTossTest.java" />
         <option value="$PROJECT_DIR$/test/Coin/ChanceTest.java" />
         <option value="$PROJECT_DIR$/test/chance/ChanceTest.java" />
+        <option value="$PROJECT_DIR$/src/chance/ChanceOperator.java" />
+        <option value="$PROJECT_DIR$/test/chance/ProbabilityGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/chance/ProbabilityGenerator.java" />
         <option value="$PROJECT_DIR$/src/chance/Chance.java" />
       </list>
     </option>
@@ -122,7 +156,70 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rectangle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rectangle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rectangle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rectangle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rectangle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
@@ -132,11 +229,15 @@
   <component name="PropertiesComponent">
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="chance" />
       <recent name="Coin" />
       <recent name="" />
     </key>
@@ -144,37 +245,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Rectangle (1)">
-    <configuration default="false" name="RectangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+  <component name="RunManager" selected="JUnit.chance in Rectangle">
+    <configuration default="false" name="ChanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="chance.Chance" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="Rectangle" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RectangleTest" />
+      <option name="PACKAGE_NAME" value="chance" />
+      <option name="MAIN_CLASS_NAME" value="chance.ChanceTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in Rectangle (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Rectangle" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -190,7 +275,7 @@
     <configuration default="false" name="ChanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="chance.*" />
+          <option name="PATTERN" value="chance.Chance" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -213,10 +298,10 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ChanceTest.getChanceToGetTail_should_return_the_probability_to_get_tail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProbabilityGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="chance.*" />
+          <option name="PATTERN" value="chance.Chance" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -224,8 +309,34 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="chance" />
-      <option name="MAIN_CLASS_NAME" value="chance.ChanceTest" />
-      <option name="METHOD_NAME" value="getChanceToGetTail_should_return_the_probability_to_get_tail" />
+      <option name="MAIN_CLASS_NAME" value="chance.ProbabilityGeneratorTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="chance.Chance" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Rectangle" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="chance" />
+      <option name="MAIN_CLASS_NAME" value="chance.ProbabilityGeneratorTest" />
+      <option name="METHOD_NAME" value="getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -239,7 +350,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ChanceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="chance in Rectangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="chance.*" />
@@ -250,9 +361,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="chance" />
-      <option name="MAIN_CLASS_NAME" value="chance.ChanceTest" />
+      <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -522,19 +633,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RectangleTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All in Rectangle (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ChanceTest.getChanceToGetTail_should_return_the_probability_to_get_tail" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ChanceTest (1)" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ProbabilityGeneratorTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.chance in Rectangle" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Rectangle (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ChanceTest (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ChanceTest.getChanceToGetTail_should_return_the_probability_to_get_tail" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RectangleTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.chance in Rectangle" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProbabilityGeneratorTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ChanceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -561,39 +672,45 @@
       <option name="project" value="LOCAL" />
       <updated>1458209188104</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implemented methods to get the chances for 2 coins&#10;">
+      <created>1458212430685</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1458212430685</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Rectangle_(1) - 2016.03.17 at 16h 27m 27s.xml">
-      <configuration name="All in Rectangle (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest - 2016.03.18 at 10h 20m 43s.xml">
+      <configuration name="ProbabilityGeneratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 10m 40s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest - 2016.03.18 at 10h 20m 55s.xml">
+      <configuration name="ProbabilityGeneratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 12m 22s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest - 2016.03.18 at 10h 46m 28s.xml">
+      <configuration name="ProbabilityGeneratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 23m 15s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest - 2016.03.18 at 10h 46m 53s.xml">
+      <configuration name="ProbabilityGeneratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 23m 28s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest - 2016.03.18 at 10h 48m 00s.xml">
+      <configuration name="ProbabilityGeneratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 23m 46s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest_getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent - 2016.03.18 at 10h 14m 23s.xml">
+      <configuration name="ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 24m 18s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest_getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent - 2016.03.18 at 10h 15m 11s.xml">
+      <configuration name="ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 25m 19s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest_getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent - 2016.03.18 at 10h 19m 13s.xml">
+      <configuration name="ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 26m 14s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="ProbabilityGeneratorTest_getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent - 2016.03.18 at 10h 20m 31s.xml">
+      <configuration name="ProbabilityGeneratorTest.getChanceToOccurOnceForMultipleEventShouldReturnTheProbabilityOfNotOccuringForMultipleEvent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ChanceTest_(1) - 2016.03.17 at 16h 27m 18s.xml">
-      <configuration name="ChanceTest (1)" configurationId="JUnit" />
+    <history-entry file="chance_in_Rectangle - 2016.03.18 at 10h 48m 32s.xml">
+      <configuration name="chance in Rectangle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -609,9 +726,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986537" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12851897" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12851897" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -636,18 +753,18 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986537" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12851897" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12851897" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39957264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -664,7 +781,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit&#10;" />
     <MESSAGE value="implemented method to get the chance to get Tail" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented method to get the chance to get Tail" />
+    <MESSAGE value="implemented methods to get the chances for 2 coins&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented methods to get the chances for 2 coins&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -692,7 +810,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,7 +832,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,23 +840,120 @@
     <entry file="file://$PROJECT_DIR$/test/chance/ChanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1458277991000" expanded="true" signature="281:503" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chance/Chance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06277533">
-          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#0#1013#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/chance/ProbabilityGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chance/ProbabilityGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5605727">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Rectangle</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
