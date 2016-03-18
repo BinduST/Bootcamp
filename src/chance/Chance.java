@@ -19,6 +19,8 @@ public class Chance {
         return new Chance(value);
     }
 
+    //------------------------------------------- operations ---------------------------
+
     @Override
     public boolean equals(Object otherChance) {
         if (this == otherChance) return true;
@@ -29,12 +31,39 @@ public class Chance {
 
     }
 
-    public Chance not() {
+    private Chance not() {
         return new Chance(1 - value);
     }
 
-    public Chance multiply(Chance otherChance) {
+    private Chance multiply(Chance otherChance) {
         double product = otherChance.value * value;
         return Chance.create(product);
+    }
+
+    // ---------------------------- occurrences ------------------------------------
+
+    public Chance getChanceToOccurOnceForSingleEvent() {
+        return Chance.create(value);
+    }
+
+    public Chance getChanceToNotOccurForSingleEvent() {
+        return getChanceToOccurOnceForSingleEvent().not();
+    }
+
+    public Chance getChanceToNotOccurForMultipleEvent(int noOfEvents) {
+        Chance chance = null;
+        for (int i = 0; i < noOfEvents - 1; i++) {
+            chance = getChanceToOccurOnceForSingleEvent().multiply(getChanceToOccurOnceForSingleEvent());
+        }
+        return chance;
+    }
+
+
+    public Chance getChanceToOccurAtLeastOnceForMultipleEvents(int noOfEvents) {
+        Chance chance = null;
+        for (int i = 0; i < noOfEvents - 1; i++) {
+            chance = getChanceToNotOccurForSingleEvent().multiply(getChanceToNotOccurForSingleEvent()).not();
+        }
+        return chance;
     }
 }
