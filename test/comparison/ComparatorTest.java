@@ -7,79 +7,70 @@ import org.junit.Test;
 public class ComparatorTest {
     @Test
     public void compareShouldGiveTrueIfTwoDimensionsAreEqual() {
-        Length oneFeet = new Feet(1);
-        Length twelveInches = new Inch(12);
+        Units oneFeet = new Feet(1);
+        Units twelveInches = new Inch(12);
 
-        RelationShip relationShip = new RelationShip(oneFeet, twelveInches);
-        Comparator comparator = new Comparator(relationShip);
+        Comparator comparator = new Comparator(oneFeet,twelveInches);
 
-        Assert.assertEquals(true, comparator.compare(oneFeet, twelveInches));
+        Assert.assertEquals(true, comparator.compare());
 
     }
 
     @Test
     public void shouldGiveTrueWhenOneFeetEqualsToOneFeet() {
-        Length oneFeet = new Feet(1);
+        Units oneFeet = new Feet(1);
 
-        RelationShip relationShip = new RelationShip(oneFeet, oneFeet);
 
-        Comparator comparator = new Comparator(relationShip);
-        Assert.assertEquals(true, comparator.compare(oneFeet, oneFeet));
+        Comparator comparator = new Comparator(oneFeet, oneFeet);
+        Assert.assertEquals(true, comparator.compare());
     }
 
     @Test
     public void shouldReturnFalseWhenOneFeetNotEqualToThirteenInches() {
-        Length oneFeet = new Feet(1);
-        Length thirteenInches = new Inch(13);
-        Length twelveInches = new Inch(12);
+        Units oneFeet = new Feet(1);
+        Units thirteenInches = new Inch(13);
 
-        RelationShip relationShip = new RelationShip(oneFeet, twelveInches);
-
-        Comparator comparator = new Comparator(relationShip);
-        Assert.assertEquals(false, comparator.compare(oneFeet, thirteenInches));
+        Comparator comparator = new Comparator(oneFeet, thirteenInches);
+        Assert.assertEquals(false, comparator.compare());
     }
 
     @Test
     public void twoInchesShouldBeEqualToFiveCentimetres() {
-        Length twoInches = new Inch(2);
-        Length fiveCentimetres = new Centimetre(5);
-        RelationShip relationShip = new RelationShip(new Inch(1), new Centimetre(2.5));
+        Units twoInches = new Inch(2);
+        Units fiveCentimetres = new Centimetre(5);
 
-        Comparator comparator = new Comparator(relationShip);
-        Assert.assertEquals(false, comparator.compare(twoInches, fiveCentimetres));
+        Comparator comparator = new Comparator(twoInches, fiveCentimetres);
+        Assert.assertEquals(true, comparator.compare());
 
     }
 
     @Test
     public void oneCentimetreShouldEqualToTenMM() {
-        Length twoInches = new Centimetre(1);
-        Length fiveCentimetres = new Millimetre(10);
-        RelationShip relationShip = new RelationShip(new Centimetre(1), new Millimetre(10));
+        Units oneCentimetre = new Centimetre(1);
+        Units tenMillimetres = new Millimetre(10);
 
-        Comparator comparator = new Comparator(relationShip);
-        Assert.assertEquals(true, comparator.compare(twoInches, fiveCentimetres));
+        Comparator comparator = new Comparator(oneCentimetre, tenMillimetres);
+        Assert.assertEquals(true, comparator.compare());
 
     }
 
     @Test
     public void oneGallonShouldBeEqualToLitres() {
-        Length oneGallon = new Gallon(1);
-        Length litre = new Litre(3.78);
-        RelationShip relationShip = new RelationShip(new Gallon(1), new Litre(3.78));
+        Units oneGallon = new Gallon(1);
+        Units litre = new Litre(3.78);
 
-        Comparator comparator = new Comparator(relationShip);
-        Assert.assertEquals(true, comparator.compare(oneGallon, litre));
+        Comparator comparator = new Comparator(oneGallon,litre);
+        Assert.assertEquals(true, comparator.compare());
 
     }
 
-//    @Test
-//    public void threeGallonShouldBeEqualTo11Point34Litres() {
-//        Length threeGallons = new Gallon(3);
-//        Length litres = new Litre(11.34);
-//        RelationShip relationShip = new RelationShip(new Gallon(1), new Litre(3.78));
-//
-//        Comparator comparator = new Comparator(relationShip);
-//        Assert.assertEquals(true, comparator.compare(threeGallons, litres));
-//
-//    }
+    @Test
+    public void threeGallonShouldBeEqualTo11Point34Litres() {
+        Units threeGallons = new Gallon(3);
+        Units litres = new Litre(11.34);
+
+        Comparator comparator = new Comparator(threeGallons,litres);
+        Assert.assertEquals(true, comparator.compare());
+
+    }
 }

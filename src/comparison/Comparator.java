@@ -2,14 +2,17 @@ package comparison;
 
 public class Comparator {
 
-    private RelationShip relationShip;
+    private Units firstUnit;
+    private Units secondUnit;
 
-    public Comparator(RelationShip relationShip) {
-
-        this.relationShip = relationShip;
+    public Comparator(Units firstUnit, Units secondUnit) {
+        this.firstUnit = firstUnit;
+        this.secondUnit = secondUnit;
     }
 
-    public boolean compare(Length firstLength, Length otherLength) {
-        return relationShip.check(firstLength, otherLength);
+    public boolean compare() {
+        return firstUnit.equals(secondUnit);
     }
+
+
 }
