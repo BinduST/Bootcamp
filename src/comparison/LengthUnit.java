@@ -1,6 +1,6 @@
 package comparison;
 
-public enum LengthUnit implements Unit{
+public enum LengthUnit implements Unit {
     INCH(1.0),
     FEET(12.0),
     CENTIMETER(0.4),

@@ -11,7 +11,7 @@ public class Measurement {
     }
 
     public boolean isEqualTo(Measurement otherMeasurement) throws IncomparableUnitException {
-        if(this.unit.getClass()!=otherMeasurement.unit.getClass())
+        if (this.unit.getClass() != otherMeasurement.unit.getClass())
             throw new IncomparableUnitException();
         return equals(otherMeasurement);
     }
@@ -40,7 +40,7 @@ public class Measurement {
 
     public Measurement add(Measurement otherMeasurement) {
         Measurement convertedMeasurement = otherMeasurement.convertToBase(unit);
-        double newValue = (this.value+convertedMeasurement.value) *10 *0.1;
+        double newValue = (this.value + convertedMeasurement.value) * 10 * 0.1;
         return new Measurement(newValue, unit);
     }
 }
