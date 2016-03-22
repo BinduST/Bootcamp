@@ -1,3 +1,5 @@
+package Quadrilateral;
+
 public class Square extends Rectangle {
 
     private Square(double side) {

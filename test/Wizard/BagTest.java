@@ -12,18 +12,14 @@ public class BagTest {
 
     @Test
     public void addCanAddABallToBag() throws InvalidEntryException {
-        Bag bag = new Bag();
+        Bag bag = new Bag(1);
         Assert.assertTrue(bag.add(new Ball(BallColor.GREEN)));
     }
 
     @Test
     public void addThrowsExceptionWhenBagIsFull() throws InvalidEntryException {
-        Bag bag = new Bag();
-        for (int i = 0; i < 10; i++) {
-            bag.add(new Ball(BallColor.BLUE));
-        }
-        Assert.assertTrue(bag.add(new Ball(BallColor.GREEN)));
-        Assert.assertTrue(bag.add(new Ball(BallColor.GREEN)));
+        Bag bag = new Bag(1);
+        bag.add(new Ball(BallColor.BLUE));
         thrown.expect(InvalidEntryException.class);
         thrown.expectMessage(CoreMatchers.is("Bag is Full"));
         bag.add(new Ball(BallColor.GREEN));
@@ -31,18 +27,18 @@ public class BagTest {
 
     @Test
     public void bagShouldAllowOnly3GreenBalls() throws InvalidEntryException {
-        Bag bag = new Bag();
+        Bag bag = new Bag(12);
         bag.add(new Ball(BallColor.GREEN));
         bag.add(new Ball(BallColor.GREEN));
         bag.add(new Ball(BallColor.GREEN));
         thrown.expect(InvalidEntryException.class);
-        thrown.expectMessage(CoreMatchers.is("Only 3 green balls are allowed"));
+        thrown.expectMessage(CoreMatchers.is("Not allowed"));
         bag.add(new Ball(BallColor.GREEN));
     }
 
     @Test
     public void bagShouldPreventAddingDoubleTheNoOfRedBallsThanGreenBalls() throws InvalidEntryException {
-        Bag bag = new Bag();
+        Bag bag = new Bag(12);
         bag.add(new Ball(BallColor.GREEN));
         bag.add(new Ball(BallColor.GREEN));
         bag.add(new Ball(BallColor.RED));
@@ -55,10 +51,37 @@ public class BagTest {
     }
 
     @Test
-    public void bagShouldPreventAddingRedBallAtTheBeginning() throws InvalidEntryException {
-        Bag bag = new Bag();
+    public void bagShouldPreventAddingRedBallBeforeAGreenBall() throws InvalidEntryException {
+        Bag bag = new Bag(12);
         thrown.expect(InvalidEntryException.class);
         thrown.expectMessage(CoreMatchers.is("Not allowed"));
         bag.add(new Ball(BallColor.RED));
     }
+
+    @Test
+    public void shouldAllowYellowBallsTo40percentOfTotalBalls() throws InvalidEntryException {
+        Bag bag = new Bag(12);
+        bag.add(new Ball(BallColor.GREEN));
+        bag.add(new Ball(BallColor.BLUE));
+        bag.add(new Ball(BallColor.BLUE));
+        bag.add(new Ball(BallColor.YELLOW));
+        thrown.expect(InvalidEntryException.class);
+        thrown.expectMessage(CoreMatchers.is("Not allowed"));
+        bag.add(new Ball(BallColor.YELLOW));
+
+    }
+
+//    @Test
+//    public void shouldGiveTheSummaryOfBag() throws InvalidEntryException {
+//        Bag bag = new Bag();
+//        bag.add(new Ball(BallColor.GREEN));
+//        bag.add(new Ball(BallColor.GREEN));
+//        bag.add(new Ball(BallColor.BLUE));
+//        bag.add(new Ball(BallColor.BLUE));
+//        bag.add(new Ball(BallColor.YELLOW));
+//        bag.add(new Ball(BallColor.YELLOW));
+//        String expected = "BAG: 6 BALLS\nGREEN: 2\nRED: 2\nYELLOW: 2";
+//        Assert.assertEquals(expected,bag.getSummary(new BallCountFormatter()));
+//
+//    }
 }

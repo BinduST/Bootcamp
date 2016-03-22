@@ -1,3 +1,5 @@
+package Quadrilateral;
+
 public class NonPositiveArgumentException extends RuntimeException {
     private double actual;
 

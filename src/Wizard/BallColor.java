@@ -1,5 +1,5 @@
 package Wizard;
 
 public enum BallColor {
-    GREEN,RED,BLUE;
+    GREEN,RED,BLUE, YELLOW;
 }
