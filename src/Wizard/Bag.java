@@ -11,6 +11,7 @@ import java.util.List;
 public class Bag {
 
     private int limit;
+    private Rules rules;
 
 
     List bag = new ArrayList();
@@ -19,8 +20,9 @@ public class Bag {
     private int redAllowed = 0;
     private double yellowAllowed = 0;
 
-    public Bag(int limit) {
+    public Bag(int limit, Rules rules) {
         this.limit = limit;
+        this.rules = rules;
     }
 
     public boolean add(Ball ball) throws InvalidEntryException {
@@ -33,23 +35,23 @@ public class Bag {
     }
 
     private void checkValidation(Ball ball) throws InvalidEntryException {
-        if (ball.isColor(BallColor.BLUE)) {
+        if (ball.isOfColor(Color.BLUE)) {
             yellowAllowed += 0.4;
             return;
         }
-        if (ball.isColor(BallColor.GREEN) && greenAllowed > 0) {
+        if (ball.isOfColor(Color.GREEN) && greenAllowed > 0) {
             greenAllowed--;
             redAllowed += 2;
             yellowAllowed += 0.4;
             return;
         }
-        if (ball.isColor(BallColor.RED) && redAllowed > 0) {
+        if (ball.isOfColor(Color.RED) && redAllowed > 0) {
             redAllowed--;
             yellowAllowed += 0.4;
             return;
         }
 
-        if (ball.isColor(BallColor.YELLOW) && yellowAllowed >= 1) {
+        if (ball.isOfColor(Color.YELLOW) && yellowAllowed >= 1) {
             yellowAllowed += 0.4;
             yellowAllowed--;
             return;
@@ -65,9 +67,9 @@ public class Bag {
 //    }
 //
 //    private HashMap CountBalls() {
-//        BallColor[] ballColors = BallColor.values();
-//        HashMap<BallColor, Integer> counts = new HashMap<>();
-//        for (BallColor color : ballColors) {
+//        Color[] ballColors = Color.values();
+//        HashMap<Color, Integer> counts = new HashMap<>();
+//        for (Color color : ballColors) {
 //            if(!counts.containsKey(color))
 //                counts.put(color,0);
 //            int value = counts.get(color);
